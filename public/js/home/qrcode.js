@@ -15,10 +15,17 @@ QRCodeScannerModal.addEventListener("show.bs.modal", async (event) => {
     let html5QrcodeScanner = new Html5QrcodeScanner(
         "reader",
         {
+            // fps: 10,
+            // qrbox: { width: 250, height: 250 },
+            // formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE],
+            // rememberLastUsedCamera: false,
+
             fps: 10,
-            qrbox: { width: 250, height: 250 },
-            formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE],
-            rememberLastUsedCamera: false,
+            qrbox: {width: 300, height: 300},
+            rememberLastUsedCamera: true,
+            // Only support camera scan type.
+            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
+            
         },
         /* verbose= */ false
     );
